@@ -262,15 +262,6 @@ class Builder
         return $this->where($this->model->getQualifiedKeyName(), '!=', $id);
     }
 
-    /**
-     * @param string $column
-     * @param string $value
-     * @return QueryBuilder
-     */
-    public function whereLike(string $column, string $value)
-    {
-        return $this->query->where($column, 'like', "%{$value}%");
-    }
 
     /**
      * Add a basic where clause to the query.

@@ -933,6 +933,27 @@ class Builder
         return $this->whereRaw($sql, $bindings, 'or');
     }
 
+
+    /**
+     * @param string $column
+     * @param string $value
+     * @return $this
+     */
+    public function whereLike(string $column, string $value)
+    {
+        return $this->where($column, 'like', "%{$value}%");
+    }
+
+    /**
+     * @param string $column
+     * @param string $value
+     * @return $this
+     */
+    public function orWhereLike(string $column, string $value)
+    {
+        return $this->orWhere($column, 'like', "%{$value}%");
+    }
+
     /**
      * Add a "where in" clause to the query.
      *
